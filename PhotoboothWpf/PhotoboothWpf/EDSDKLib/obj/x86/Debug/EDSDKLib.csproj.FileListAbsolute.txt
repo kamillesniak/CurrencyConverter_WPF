@@ -1,5 +1,0 @@
-C:\Users\Kamil\Desktop\fotobudka\fotobudkie-2.0-master\EDSDKLib\bin\Debug\EDSDKLib.dll
-C:\Users\Kamil\Desktop\fotobudka\fotobudkie-2.0-master\EDSDKLib\bin\Debug\EDSDKLib.pdb
-C:\Users\Kamil\Desktop\fotobudka\fotobudkie-2.0-master\EDSDKLib\obj\x86\Debug\EDSDKLib.csprojResolveAssemblyReference.cache
-C:\Users\Kamil\Desktop\fotobudka\fotobudkie-2.0-master\EDSDKLib\obj\x86\Debug\EDSDKLib.dll
-C:\Users\Kamil\Desktop\fotobudka\fotobudkie-2.0-master\EDSDKLib\obj\x86\Debug\EDSDKLib.pdb
