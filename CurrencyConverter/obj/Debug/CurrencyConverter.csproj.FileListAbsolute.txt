@@ -1,0 +1,14 @@
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverter.exe.config
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.csprojResolveAssemblyReference.cache
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\MainWindow.g.cs
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\App.g.cs
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter_MarkupCompile.cache
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter_MarkupCompile.lref
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverter.exe
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\bin\Debug\CurrencyConverter.pdb
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\MainWindow.baml
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.g.resources
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.Properties.Resources.resources
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.GenerateResource.Cache
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.exe
+G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.pdb
