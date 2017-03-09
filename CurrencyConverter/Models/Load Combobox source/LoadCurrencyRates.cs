@@ -8,38 +8,43 @@ namespace CurrencyConverter
 {
     class LoadCurrencyRates
     {
-      public  List<CurrencyRateValues> actualCurrencyRatesList { get; private set; }
+         public  List<CurrencyRateValues> actualCurrencyRatesList { get; private set; }
+         private IList <string> actualCurrencyRateURLs { get; set; }
+         private IList<XDocument> actualCurrencyXDocuments { get; set; }
+
         public LoadCurrencyRates()
         {
-            actualCurrencyRatesList = FillList();
+            actualCurrencyRateURLs = LoadCurrencyRateURLs();
+
+            actualCurrencyXDocuments = LoadAllCurrencyXDocuments();
+
+            actualCurrencyRatesList = FillActualCurencyList();
+
         }
-        private List<CurrencyRateValues> FillList()
+
+        private IList<string> LoadCurrencyRateURLs()
         {
-            var CurrencyUrl = new LoadActualCurrencyRateURL();
-            List<string> actualCurrencyRatesURLs = CurrencyUrl.AcutalCurrencyRateUrlList;
-
-            var currencyXDocuments = LoadAllCurrencyXDocuments(actualCurrencyRatesURLs);
-
-            List<CurrencyRateValues> actualCurrencyRateValues = FillActualCurencyList(currencyXDocuments);
-
-            return actualCurrencyRateValues;
+            var CurrenciesUrls = new LoadActualCurrencyRateURL();
+            return CurrenciesUrls.AcutalCurrencyRateUrlList;
         }
-        private List<XDocument> LoadAllCurrencyXDocuments(List<string> actualCurrencyURLs)
+
+        private IList<XDocument> LoadAllCurrencyXDocuments()
         {
-            var xdocList = new List<XDocument>();
-            foreach (string line in actualCurrencyURLs)
+            IList<XDocument> xdocList = new List<XDocument> ();
+            foreach (string line in actualCurrencyRateURLs)
             {
                 var xdoc = new LoadXmlFromUrl(line);
                 xdocList.Add(xdoc.CurrecyRatesXDoc);
             }
             return xdocList;
         }
-        private List<CurrencyRateValues> FillActualCurencyList(List<XDocument> currencyXDocumentList)
+
+        private List<CurrencyRateValues> FillActualCurencyList()
         {
-            var currencyList = new List<CurrencyRateValues>();
+            List<CurrencyRateValues> currencyList = new List<CurrencyRateValues>();
             currencyList.Add(AddPLNtoList());
 
-            foreach (XDocument xdoc in currencyXDocumentList)
+            foreach (XDocument xdoc in actualCurrencyXDocuments)
             {
                 var currencyRatesList = new LoadActualCurrencyValues(xdoc);
                 currencyList.AddRange(currencyRatesList.actualCurrencyRateList);
@@ -47,11 +52,13 @@ namespace CurrencyConverter
             currencyList = SortList(currencyList);
             return currencyList;
         }
+
         private CurrencyRateValues AddPLNtoList()
         {
             var currValue = new CurrencyRateValues("polski Zloty", "PLN", 1, 1);
             return currValue;
         }
+
         private List<CurrencyRateValues> SortList(List<CurrencyRateValues> currList)
         {
             List<CurrencyRateValues> sortedList = currList.OrderBy(o => o.CurrencyName).ToList();
