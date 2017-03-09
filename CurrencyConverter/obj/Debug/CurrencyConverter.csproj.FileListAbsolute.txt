@@ -12,3 +12,17 @@ G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConvert
 G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.GenerateResource.Cache
 G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.exe
 G:\visual_projekty\CurrencyConverter\CurrencyConverter\obj\Debug\CurrencyConverter.pdb
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\bin\Debug\CurrencyConverter.exe.config
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\CurrencyConverter.exe
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\CurrencyConverter.pdb
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\bin\Debug\CurrencyConverter.exe
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\bin\Debug\CurrencyConverter.pdb
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\CurrencyConverter.csprojResolveAssemblyReference.cache
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\MainWindow.g.cs
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\App.g.cs
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\CurrencyConverter_MarkupCompile.cache
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\CurrencyConverter_MarkupCompile.lref
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\MainWindow.baml
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\CurrencyConverter.g.resources
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\CurrencyConverter.Properties.Resources.resources
+G:\GIT_currencyConverter\CurrencyConverter_WPF\CurrencyConverter\obj\Debug\CurrencyConverter.csproj.GenerateResource.Cache

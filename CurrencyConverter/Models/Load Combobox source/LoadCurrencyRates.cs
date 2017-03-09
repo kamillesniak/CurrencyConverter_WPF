@@ -16,26 +16,47 @@ namespace CurrencyConverter
         private List<CurrencyRateValues> FillList()
         {
             var CurrencyUrl = new LoadActualCurrencyRateURL();
-            List<string> actualCurrencyRatesUrl = CurrencyUrl.AcutalCurrencyRateUrlList;
-            var xdocList = new List<XDocument>();
+            List<string> actualCurrencyRatesURLs = CurrencyUrl.AcutalCurrencyRateUrlList;
 
-            foreach (string line in actualCurrencyRatesUrl)
+            var currencyXDocuments = LoadAllCurrencyXDocuments(actualCurrencyRatesURLs);
+
+            List<CurrencyRateValues> actualCurrencyRateValues = FillActualCurencyList(currencyXDocuments);
+
+            return actualCurrencyRateValues;
+        }
+        private List<XDocument> LoadAllCurrencyXDocuments(List<string> actualCurrencyURLs)
+        {
+            var xdocList = new List<XDocument>();
+            foreach (string line in actualCurrencyURLs)
             {
                 var xdoc = new LoadXmlFromUrl(line);
                 xdocList.Add(xdoc.CurrecyRatesXDoc);
             }
-
+            return xdocList;
+        }
+        private List<CurrencyRateValues> FillActualCurencyList(List<XDocument> currencyXDocumentList)
+        {
             var currencyList = new List<CurrencyRateValues>();
+            currencyList.Add(AddPLNtoList());
 
-            currencyList.Add(new CurrencyRateValues("Polski Zloty", "PLN", 1, 1));
-
-            foreach (XDocument xdoc in xdocList)
+            foreach (XDocument xdoc in currencyXDocumentList)
             {
                 var currencyRatesList = new LoadActualCurrencyValues(xdoc);
                 currencyList.AddRange(currencyRatesList.actualCurrencyRateList);
             }
-
+            currencyList = SortList(currencyList);
             return currencyList;
         }
+        private CurrencyRateValues AddPLNtoList()
+        {
+            var currValue = new CurrencyRateValues("polski Zloty", "PLN", 1, 1);
+            return currValue;
+        }
+        private List<CurrencyRateValues> SortList(List<CurrencyRateValues> currList)
+        {
+            List<CurrencyRateValues> sortedList = currList.OrderBy(o => o.CurrencyName).ToList();
+            return sortedList;
+        }
+
     }
 }
