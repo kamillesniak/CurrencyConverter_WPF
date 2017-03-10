@@ -10,6 +10,7 @@ namespace CurrencyConverter
     class LoadActualCurrencyValues
     {
        public List<CurrencyRateValues> actualCurrencyRateList { get; private set; }
+
         public LoadActualCurrencyValues(XDocument currencyRatesXdoc)
         {
             actualCurrencyRateList = FillList(currencyRatesXdoc);

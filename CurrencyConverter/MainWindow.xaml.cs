@@ -21,6 +21,7 @@ namespace CurrencyConverter
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool StatusFlag = true;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace CurrencyConverter
             var currencyList = new List<CurrencyRateValues>();
             var currRates = new LoadCurrencyRates();
             currencyList = currRates.actualCurrencyRatesList;
+            ActualStatusLabel =  CheckStatus.CheckIfOnline(currRates.statusFlag, ActualStatusLabel);
 
             FirstCurrencyComboBox.ItemsSource = currencyList;
             FirstCurrencyComboBox.DisplayMemberPath = "CurrencyDisplayValue";
@@ -74,7 +76,7 @@ namespace CurrencyConverter
 
         #endregion
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void ConvertCurrency(object sender, RoutedEventArgs e)
         {
             try
             {

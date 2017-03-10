@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="Models\Calculator\ConvertActualValues.cs" />
     <Compile Include="Models\Calculator\Converter.cs" />
+    <Compile Include="Models\CheckStatus.cs" />
     <Compile Include="Models\CurrencyValues\CurrencyRateValues.cs" />
     <Compile Include="Models\CurrencyUrlGenerator\LoadActualCurrencyRateURL.cs" />
     <Compile Include="Models\CurrencyValues\LoadActualCurrencyValues.cs" />

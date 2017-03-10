@@ -11,6 +11,7 @@ namespace CurrencyConverter
          public  List<CurrencyRateValues> actualCurrencyRatesList { get; private set; }
          private IList <string> actualCurrencyRateURLs { get; set; }
          private IList<XDocument> actualCurrencyXDocuments { get; set; }
+         public bool statusFlag { get; private set; } = true;
 
         public LoadCurrencyRates()
         {
@@ -24,19 +25,36 @@ namespace CurrencyConverter
 
         private IList<string> LoadCurrencyRateURLs()
         {
-            var CurrenciesUrls = new LoadActualCurrencyRateURL();
-            return CurrenciesUrls.AcutalCurrencyRateUrlList;
+            try
+            {
+                var CurrenciesUrls = new LoadActualCurrencyRateURL();
+                return CurrenciesUrls.AcutalCurrencyRateUrlList;
+            }
+            catch
+            {
+                statusFlag = false;
+                return null;
+            }
+           
         }
 
         private IList<XDocument> LoadAllCurrencyXDocuments()
         {
             IList<XDocument> xdocList = new List<XDocument> ();
-            foreach (string line in actualCurrencyRateURLs)
+            try
             {
-                var xdoc = new LoadXmlFromUrl(line);
-                xdocList.Add(xdoc.CurrecyRatesXDoc);
+                foreach (string line in actualCurrencyRateURLs)
+                {
+                    var xdoc = new LoadXmlFromUrl(line);
+                    xdocList.Add(xdoc.CurrecyRatesXDoc);
+                }
+                return xdocList;
             }
-            return xdocList;
+            catch
+            {
+                statusFlag = false;
+                return null;
+            }
         }
 
         private List<CurrencyRateValues> FillActualCurencyList()
