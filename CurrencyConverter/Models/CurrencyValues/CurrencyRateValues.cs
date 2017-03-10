@@ -14,6 +14,7 @@ namespace CurrencyConverter
         public decimal CurrencyAvargeCourse { get; private set; }
         public int CurrencyConverterValue { get; private set; } = 1;
 
+       
 
         public CurrencyRateValues(string _CurrencyName, string _CurrencyCode, decimal _CurrencyAvargeCourse, int _CurrencyConverterValue)
         {
@@ -23,6 +24,7 @@ namespace CurrencyConverter
             CurrencyConverterValue = _CurrencyConverterValue;
             CurrencyDisplayValue = CurrencyName + "(" + CurrencyCode + ")";
         }
+
 
     }
 }

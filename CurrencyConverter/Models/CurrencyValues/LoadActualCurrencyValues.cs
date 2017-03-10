@@ -9,7 +9,7 @@ namespace CurrencyConverter
 {
     class LoadActualCurrencyValues
     {
-       public List<CurrencyRateValues> actualCurrencyRateList { get; private set; }
+        public List<CurrencyRateValues> actualCurrencyRateList { get; private set; }
 
         public LoadActualCurrencyValues(XDocument currencyRatesXdoc)
         {
@@ -28,15 +28,16 @@ namespace CurrencyConverter
                    StringToDecimal(item.Element("kurs_sredni").Value),
                     Int32.Parse(item.Element("przelicznik").Value)));
             }
+
             return actualRatesList;
 
         }
-             private decimal StringToDecimal(string value)
+        private decimal StringToDecimal(string value)
         {
             decimal decimalVal = 0;
-            Decimal.TryParse(value, out decimalVal);       
+            Decimal.TryParse(value, out decimalVal);
             return decimalVal;
         }
-    
+
     }
 }

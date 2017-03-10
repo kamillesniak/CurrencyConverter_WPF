@@ -26,6 +26,6 @@ namespace CurrencyConverter
             }
           
         }
-        //Grid.Column="1" HorizontalAlignment="Stretch" Height="27" VerticalAlignment="Bottom"
+
     }
 }

@@ -12,6 +12,7 @@ namespace CurrencyConverter
          private IList <string> actualCurrencyRateURLs { get; set; }
          private IList<XDocument> actualCurrencyXDocuments { get; set; }
          public bool statusFlag { get; private set; } = true;
+         public string actualXDocumentData { get; private set; }
 
         public LoadCurrencyRates()
         {
@@ -19,8 +20,10 @@ namespace CurrencyConverter
 
             actualCurrencyXDocuments = LoadAllCurrencyXDocuments();
 
-            actualCurrencyRatesList = FillActualCurencyList();
+            actualXDocumentData = LoadXDocumentDate(actualCurrencyXDocuments);
 
+            actualCurrencyRatesList = FillActualCurencyList();
+         
         }
 
         private IList<string> LoadCurrencyRateURLs()
@@ -66,6 +69,7 @@ namespace CurrencyConverter
             {
                 var currencyRatesList = new LoadActualCurrencyValues(xdoc);
                 currencyList.AddRange(currencyRatesList.actualCurrencyRateList);
+                
             }
             currencyList = SortList(currencyList);
             return currencyList;
@@ -82,6 +86,17 @@ namespace CurrencyConverter
             List<CurrencyRateValues> sortedList = currList.OrderBy(o => o.CurrencyName).ToList();
             return sortedList;
         }
+
+        private string LoadXDocumentDate(IEnumerable<XDocument> xdocs)
+        {
+             var xdoc = xdocs.FirstOrDefault();
+             var date = xdoc.Descendants()
+                .Where(x => x.Name.LocalName == "data_publikacji")
+                .FirstOrDefault().Value.ToString();
+            return date;
+        }
+
+
 
     }
 }

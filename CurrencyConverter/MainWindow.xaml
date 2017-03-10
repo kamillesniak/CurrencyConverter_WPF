@@ -28,6 +28,7 @@
         <TextBox x:Name="SecondCurrencyValueComboBox"  Text="0" HorizontalAlignment="Stretch" Height="36"  Grid.Row="1" Grid.Column="4"  VerticalAlignment="Center" />
         <Button x:Name="button" Background="LightGray" Grid.ColumnSpan="3" Content="Calculate" Grid.Column="2" HorizontalAlignment="Left" Height="48" Margin="60,103,0,0" VerticalAlignment="Top" Width="117" Click="ConvertCurrency" Grid.Row="1" RenderTransformOrigin="0.514,0.329"/>
         <Label x:Name="ActualStatusLabel"  Grid.Column="1" HorizontalAlignment="Stretch" Height="27" VerticalAlignment="Bottom"  Background="{x:Null}" FontWeight="Bold"/>
+        <Label x:Name="ActualDateLabel"  Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Height="27"   VerticalAlignment="Bottom" Background="{x:Null}" />
 
     </Grid>
 </Window>
