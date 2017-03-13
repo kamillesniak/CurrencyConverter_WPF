@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace CurrencyConverter
 {
-    class ConvertActualValues:Converter
+    class ActualValuesConverter:Converter
     {
-        public ConvertActualValues(UserActualValues firstCurrency, UserActualValues secondCurrency)
+        public ActualValuesConverter(UserActualValues firstCurrency, UserActualValues secondCurrency)
         {
             UseCorrectConverter(firstCurrency, secondCurrency);
             convertResult = DecimalToRound(convertResult, 3);

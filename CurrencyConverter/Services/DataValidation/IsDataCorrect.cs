@@ -9,9 +9,9 @@ using System.Windows;
 
 namespace CurrencyConverter
 {
-    public static class CheckIfDataIsCorrect
+    public static class IsDataCorrect
     {
-        static public bool CheckIfTextBoxValueIsNumber(string textBoxText)
+        static public bool IsTextBoxValueNumber(string textBoxText)
         {
             if(Regex.IsMatch(textBoxText,@"\d"))
              {
@@ -24,7 +24,7 @@ namespace CurrencyConverter
             }
        
         }
-        static public bool CheckIfComboBoxHaveAnotherValues(ComboBox first, ComboBox second)
+        static public bool DoesComboBoxHaveAnotherValues(ComboBox first, ComboBox second)
         {
             if(first.SelectedValue == second.SelectedValue)
             {

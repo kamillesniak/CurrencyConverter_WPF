@@ -7,11 +7,11 @@ using System.Xml.Linq;
 
 namespace CurrencyConverter
 {
-    class LoadActualCurrencyValues
+    class ActualCurrencyValuesLoader
     {
         public List<CurrencyRateValues> actualCurrencyRateList { get; private set; }
 
-        public LoadActualCurrencyValues(XDocument currencyRatesXdoc)
+        public ActualCurrencyValuesLoader(XDocument currencyRatesXdoc)
         {
             actualCurrencyRateList = FillList(currencyRatesXdoc);
         }

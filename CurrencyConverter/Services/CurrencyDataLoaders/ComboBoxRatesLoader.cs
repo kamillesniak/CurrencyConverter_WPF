@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 namespace CurrencyConverter
 {
-    class LoadCurrencyRates
+    class ComboBoxRatesLoader
     {
          public  List<CurrencyRateValues> actualCurrencyRatesList { get; private set; }
          private IList <string> actualCurrencyRateURLs { get; set; }
@@ -14,7 +14,7 @@ namespace CurrencyConverter
          public bool statusFlag { get; private set; } = true;
          public string actualXDocumentData { get; private set; }
 
-        public LoadCurrencyRates()
+        public ComboBoxRatesLoader()
         {
             actualCurrencyRateURLs = LoadCurrencyRateURLs();
 
@@ -30,7 +30,7 @@ namespace CurrencyConverter
         {
             try
             {
-                var CurrenciesUrls = new LoadActualCurrencyRateURL();
+                var CurrenciesUrls = new ActualCurrencyRateUrlLoader();
                 return CurrenciesUrls.AcutalCurrencyRateUrlList;
             }
             catch
@@ -48,7 +48,7 @@ namespace CurrencyConverter
             {
                 foreach (string line in actualCurrencyRateURLs)
                 {
-                    var xdoc = new LoadXmlFromUrl(line);
+                    var xdoc = new UrlToXmlLoader(line);
                     xdocList.Add(xdoc.CurrecyRatesXDoc);
                 }
                 return xdocList;
@@ -67,7 +67,7 @@ namespace CurrencyConverter
 
             foreach (XDocument xdoc in actualCurrencyXDocuments)
             {
-                var currencyRatesList = new LoadActualCurrencyValues(xdoc);
+                var currencyRatesList = new ActualCurrencyValuesLoader(xdoc);
                 currencyList.AddRange(currencyRatesList.actualCurrencyRateList);
                 
             }

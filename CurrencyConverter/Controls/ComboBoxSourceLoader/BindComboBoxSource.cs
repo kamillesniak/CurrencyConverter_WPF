@@ -18,7 +18,7 @@ namespace CurrencyConverter
         private ComboBox BindSource()
         {
             List<CurrencyRateValues> currencyList = new List<CurrencyRateValues>();
-            var currRates = new LoadCurrencyRates();
+            var currRates = new ComboBoxRatesLoader();
             currencyList = currRates.actualCurrencyRatesList;
 
             var cbox = new ComboBox

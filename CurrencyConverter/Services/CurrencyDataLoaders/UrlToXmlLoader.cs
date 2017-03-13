@@ -7,11 +7,11 @@ using System.Xml.Linq;
 
 namespace CurrencyConverter
 {
-    class LoadXmlFromUrl
+    class UrlToXmlLoader
     {
         public XDocument CurrecyRatesXDoc { get; private set; }
 
-        public LoadXmlFromUrl(string _url)
+        public UrlToXmlLoader(string _url)
         {
             CurrecyRatesXDoc = DownloadExchangeRates(_url);
         }

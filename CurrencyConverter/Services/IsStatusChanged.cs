@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CurrencyConverter
 {
-    internal static class CheckStatus
+    internal static class IsStatusChanged
     {
 
         public static Label CheckIfOnline( bool status, Label lbl)

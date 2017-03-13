@@ -31,10 +31,10 @@ namespace CurrencyConverter
         private void FillActualComboBox()
         {
             var currencyList = new List<CurrencyRateValues>();
-            var currRates = new LoadCurrencyRates();
+            var currRates = new ComboBoxRatesLoader();
             currencyList = currRates.actualCurrencyRatesList;
 
-            ActualStatusLabel =  CheckStatus.CheckIfOnline(currRates.statusFlag, ActualStatusLabel);
+            ActualStatusLabel =  IsStatusChanged.CheckIfOnline(currRates.statusFlag, ActualStatusLabel);
             ActualDateLabel.Content ="Currency rates upadted at: " + currRates.actualXDocumentData;
 
             FirstCurrencyComboBox.ItemsSource = currencyList;
@@ -58,7 +58,7 @@ namespace CurrencyConverter
         private UserActualValues LoadUserTypedData(TextBox myTextBox, ComboBox cbox)
         {
             
-            if (CheckIfDataIsCorrect.CheckIfTextBoxValueIsNumber(myTextBox.Text))
+            if (IsDataCorrect.IsTextBoxValueNumber(myTextBox.Text))
             {
                 cbox.SelectedValuePath = "CurrencyAvargeCourse";
                 int currConverterValue = ((CurrencyRateValues)cbox.SelectedItem).CurrencyConverterValue;
@@ -85,10 +85,10 @@ namespace CurrencyConverter
                 var firstCurrency = LoadUserTypedData(FirstCurrencyValueComboBox, FirstCurrencyComboBox);
                 var secondCurrency = LoadUserTypedData(SecondCurrencyValueComboBox, SecondCurrencyComboBox);
 
-                if (CheckIfDataIsCorrect.CheckIfComboBoxHaveAnotherValues(FirstCurrencyComboBox, SecondCurrencyComboBox))
+                if (IsDataCorrect.DoesComboBoxHaveAnotherValues(FirstCurrencyComboBox, SecondCurrencyComboBox))
                 {
                     
-                    var convert = new ConvertActualValues(firstCurrency,secondCurrency);
+                    var convert = new ActualValuesConverter(firstCurrency,secondCurrency);
                     SecondCurrencyValueComboBox.Text = convert.convertResult.ToString();
 
                 }

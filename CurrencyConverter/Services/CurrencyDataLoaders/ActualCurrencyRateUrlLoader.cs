@@ -9,11 +9,11 @@ using System.IO;
 
 namespace CurrencyConverter
 {
-    class LoadActualCurrencyRateURL
+    class ActualCurrencyRateUrlLoader
     {
         public List<string> AcutalCurrencyRateUrlList { get; set; }
 
-        public LoadActualCurrencyRateURL()
+        public ActualCurrencyRateUrlLoader()
         {
            string [] thisYearXmlFileNames = DownloadThisYearNbpXMLFileNames("http://www.nbp.pl/kursy/xml/dir.txt");
            string actualUrlNumber = GetLastFileNumber(thisYearXmlFileNames);
