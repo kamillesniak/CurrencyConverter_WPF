@@ -10,7 +10,13 @@ namespace CurrencyConverter
     {
         public string CurrencyName { get; private set; }
         public string CurrencyCode { get; private set; }
-        public string CurrencyDisplayValue { get; private set; }
+        public string CurrencyDisplayValue
+        {
+            get
+            {
+                return string.Format("{0} ({1})", this.CurrencyName, this.CurrencyCode);
+            }
+        }
         public decimal CurrencyAvargeCourse { get; private set; }
         public int CurrencyConverterValue { get; private set; } = 1;
 
@@ -22,7 +28,7 @@ namespace CurrencyConverter
             CurrencyCode = _CurrencyCode;
             CurrencyAvargeCourse = _CurrencyAvargeCourse;
             CurrencyConverterValue = _CurrencyConverterValue;
-            CurrencyDisplayValue = CurrencyName + "(" + CurrencyCode + ")";
+          //  CurrencyDisplayValue = CurrencyName + "(" + CurrencyCode + ")";
         }
 
 
