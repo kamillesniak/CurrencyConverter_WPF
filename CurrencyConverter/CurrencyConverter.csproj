@@ -69,16 +69,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Calculator\ConvertActualValues.cs" />
-    <Compile Include="Models\Calculator\Converter.cs" />
+    <Compile Include="Services\Calculator\ConvertActualValues.cs" />
+    <Compile Include="Services\Calculator\Converter.cs" />
     <Compile Include="Models\CheckStatus.cs" />
     <Compile Include="Models\CurrencyValues\CurrencyRateValues.cs" />
-    <Compile Include="Models\CurrencyUrlGenerator\LoadActualCurrencyRateURL.cs" />
+    <Compile Include="Services\CurrencyUrlGenerator\LoadActualCurrencyRateURL.cs" />
     <Compile Include="Models\CurrencyValues\LoadActualCurrencyValues.cs" />
-    <Compile Include="Models\DataValidation\CheckIfDataIsCorrect.cs" />
-    <Compile Include="Models\Load Combobox source\BindComboBoxSource.cs" />
-    <Compile Include="Models\Load Combobox source\LoadCurrencyRates.cs" />
-    <Compile Include="Models\Loading XML\LoadXmlFromUrl.cs" />
+    <Compile Include="Services\DataValidation\CheckIfDataIsCorrect.cs" />
+    <Compile Include="Controls\Load Combobox source\BindComboBoxSource.cs" />
+    <Compile Include="Controls\Load Combobox source\LoadCurrencyRates.cs" />
+    <Compile Include="Services\Loading XML\LoadXmlFromUrl.cs" />
     <Compile Include="Models\UserInfo\UserActualValues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -106,7 +106,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\DatabaseConnection\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
